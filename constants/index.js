@@ -1,0 +1,17 @@
+export const allMuscles = [
+  { name: "Biceps" },
+  { name: "Forearms" },
+  { name: "Shoulders" },
+  { name: "Triceps" },
+  { name: "Quads" },
+  { name: "Glutes" },
+  { name: "Lats" },
+  { name: "Mid Back" },
+  { name: "Lower back" },
+  { name: "Hamstrings" },
+  { name: "Chest" },
+  { name: "Abdominals" },
+  { name: "Obliques" },
+  { name: "Traps" },
+  { name: "Calves" },
+];

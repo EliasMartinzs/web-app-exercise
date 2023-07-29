@@ -1,4 +1,6 @@
+import Navbar from "@/components/Navbar";
 import "./globals.css";
+import { ReduxProvider } from "./redux/provider";
 
 export const metadata = {
   title: "Exercises App",
@@ -7,7 +9,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ReduxProvider>
+          <Navbar />
+          {children}
+        </ReduxProvider>
+      </body>
     </html>
   );
 }

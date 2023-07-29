@@ -1,9 +1,9 @@
-import GetStarted from "@/components/GetStarted";
+import GetInfos from "@/components/GetInfos";
 
 export default function Home() {
   return (
     <main>
-      <GetStarted />
+      <GetInfos />
     </main>
   );
 }
