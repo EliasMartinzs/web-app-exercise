@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
 import {
   selectCurrentUser,
   selectMuscle,
-} from "@/app/redux/features/user-selector";
-import { useSelector } from "react-redux";
-import Image from "next/image";
+} from '@/app/redux/features/user-selector';
+import { useSelector } from 'react-redux';
+import Image from 'next/image';
 
 export default function Navbar() {
   const selectedUser = useSelector(selectCurrentUser);
@@ -22,7 +22,7 @@ export default function Navbar() {
           className="object-contain"
         />
         <div className="capitalize">
-          <p className="text-lg">
+          <p className="text-lg font-black">
             {selectedUser} - {selectedMuscle}
           </p>
         </div>

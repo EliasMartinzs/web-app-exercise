@@ -1,17 +1,19 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { allMuscles } from "@/constants";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from 'react';
+import { allMuscles } from '@/constants';
+import { useDispatch } from 'react-redux';
 import {
   setCurrentUser,
   setPreferMuscle,
-} from "@/app/redux/features/user-slice";
+} from '@/app/redux/features/user-slice';
+import { useRouter } from 'next/navigation';
 
 export default function GetInfos() {
   const [isOpen, setIsOpen] = useState(null);
-  const [fullName, setFullName] = useState("");
-  const [muscle, setMuscle] = useState("");
+  const [fullName, setFullName] = useState('');
+  const [muscle, setMuscle] = useState('');
+  const router = useRouter();
   const dispatch = useDispatch();
 
   const currentUser = () => dispatch(setCurrentUser(fullName));
@@ -19,7 +21,7 @@ export default function GetInfos() {
 
   useEffect(() => {
     const page = () => {
-      const fullname = localStorage.getItem("fullname");
+      const fullname = localStorage.getItem('fullname');
       if (!fullname) {
         setIsOpen(true);
       } else {
@@ -29,24 +31,25 @@ export default function GetInfos() {
     page();
   }, []);
 
-  const completeForm = (e) => {
+  const completeForm = e => {
     e.preventDefault();
 
     if (fullName && muscle) {
       currentUser();
       preferMuscle();
 
-      setFullName("");
-      setMuscle("");
+      setFullName('');
+      setMuscle('');
       setIsOpen(!isOpen);
-      localStorage.setItem("fullname", fullName);
+      localStorage.setItem('fullname', fullName);
+      router.push(`/exercises`);
     } else {
-      return alert("Insert your name and your preferred muscle");
+      return alert('Insert your name and your preferred muscle');
     }
   };
 
   return (
-    <div className="w-full h-screen flex-center z-50">
+    <div className="w-full h-screen flex-center z-50 overflow-hidden">
       {isOpen ? (
         <div className="w-96 h-96 bg-white rounded-2xl flex-center flex-col">
           <div className="flex-center flex-col">
@@ -67,19 +70,19 @@ export default function GetInfos() {
               placeholder="Your Name"
               name="fullName"
               value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
+              onChange={e => setFullName(e.target.value)}
               required
             />
             <select
               name=""
               id=""
               className="w-40 bg-white text-black"
-              onChange={(e) => setMuscle(e.target.value)}
+              onChange={e => setMuscle(e.target.value)}
               required
             >
               <option value="Select Muscle">Select Muscle</option>
               {allMuscles &&
-                allMuscles.map((musc) => (
+                allMuscles.map(musc => (
                   <option
                     className="bg-white text-black"
                     key={musc.name}

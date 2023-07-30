@@ -15,3 +15,17 @@ export const allMuscles = [
   { name: "Traps" },
   { name: "Calves" },
 ];
+
+export const categories = [
+  { name: "Barbell" },
+  { name: "Dumbbells" },
+  { name: "Kettlebells" },
+  { name: "Stretches" },
+  { name: "Cables" },
+  { name: "Band" },
+  { name: "Plate" },
+  { name: "TRX" },
+  { name: "Bodyweight" },
+  { name: "Yoga" },
+  { name: "Machine" },
+];
