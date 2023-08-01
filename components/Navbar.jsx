@@ -9,11 +9,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Button from './Button';
+import Sidebar from './Sidebar';
 
 export default function Navbar() {
   const selectedUser = useSelector(selectCurrentUser);
   const selectedMuscle = useSelector(selectMuscle);
   const [colorChange, setColorchange] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const router = useRouter();
 
   const name = localStorage.getItem('fullname');
@@ -49,21 +52,9 @@ export default function Navbar() {
             className="object-contain"
           />
         </Link>
-        <div className="capitalize flex items-center justify-center flex-row gap-x-5">
-          <p className="text-xs lg:text-lg font-black">{selectedUser}</p>{' '}
-          <p className="text-xs lg:text-lg font-black">{selectedMuscle}</p>
-          <div className="flex ">
-            {name ? (
-              <button
-                onClick={clearAllData}
-                className="p-2 border rounded-full hover:bg-slate-700 hover:text-white transition-colors"
-              >
-                Get Out
-              </button>
-            ) : null}
-          </div>
-        </div>
+        <Button isOpen={isOpen} setIsOpen={setIsOpen} />
       </nav>
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
     </header>
   );
 }

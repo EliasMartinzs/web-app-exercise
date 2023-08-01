@@ -46,7 +46,7 @@ export default function Execise({ params }) {
       </h3>
       <div className="flex flex-col gap-y-2 lg:grid grid-cols-2 gap-2">
         <ReactPlayer
-          url={videoURL?.at(0)}
+          url={videoURL?.at(0) && videoURL?.at(1)}
           width="100%"
           height="100%"
           playing={true}

@@ -6,13 +6,13 @@ import MyFavorites from './MyFavorites';
 
 export default function AllMuscle() {
   return (
-    <div className="w-full h-10 mt-5 flex flex-col mb-28">
-      <div className="flex gap-x-5">
+    <div className="w-full h-10 mt-5 flex flex-col mb-28 px-5">
+      <div className="flex-start gap-x-2">
         <MuscleSelect target={allMuscles} title="Muscle" />
         <CategoriesSelect target={categories} title="Muscle" />
-        <MyFavorites />
+        {/* <MyFavorites /> */}
       </div>
-      <div className="pt-5 relative">
+      <div className="w-full pt-5 relative">
         <Search />
       </div>
     </div>

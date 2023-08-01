@@ -24,9 +24,13 @@
 }
 
 .flex-start {
-  @apply flex items-center justify-start;
+  @apply flex items-start justify-start;
 }
 
 .hover-underline {
   @apply hover:underline underline-offset-4;
+}
+
+.effects {
+  transition: all 0.7s ease-in;
 }
