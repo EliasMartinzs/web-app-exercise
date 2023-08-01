@@ -52,6 +52,10 @@ export default function Navbar() {
             className="object-contain"
           />
         </Link>
+        <button onClick={clearAllData}>Clear</button>
+        <div>
+          <p>{selectedUser}</p>
+        </div>
         <Button isOpen={isOpen} setIsOpen={setIsOpen} />
       </nav>
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
