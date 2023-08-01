@@ -13,6 +13,7 @@ export default function Exercises() {
   const [data, setData] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const muscleUser = useSelector(selectMuscle);
+  console.log(muscleUser);
 
   const exercisesPerPage = 9;
 

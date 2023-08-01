@@ -1,17 +1,17 @@
-// export const options = {
-//   method: 'GET',
-//   headers: {
-//     'X-RapidAPI-Key': '82fa316542mshf6d8db6f23554a7p1cf804jsne1730c180fba',
-//     'X-RapidAPI-Host': 'musclewiki.p.rapidapi.com',
-//   },
-// };
-
 export const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '2136fcec17msh4741451f13987b6p10a676jsn59268c188b8d',
-		'X-RapidAPI-Host': 'musclewiki.p.rapidapi.com'
-	}
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '82fa316542mshf6d8db6f23554a7p1cf804jsne1730c180fba',
+    'X-RapidAPI-Host': 'musclewiki.p.rapidapi.com',
+  },
+};
+
+export const optionsCalculator = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '488fbc12c0msh86d32a72473524dp117130jsnd5dc39ebcc7f',
+    'X-RapidAPI-Host': 'mega-fitness-calculator1.p.rapidapi.com',
+  },
 };
 
 export const fetchByTagName = async muscle => {

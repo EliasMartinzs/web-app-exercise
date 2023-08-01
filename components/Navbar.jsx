@@ -16,7 +16,7 @@ export default function Navbar() {
   const selectedUser = useSelector(selectCurrentUser);
   const selectedMuscle = useSelector(selectMuscle);
   const [colorChange, setColorchange] = useState(false);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
   const name = localStorage.getItem('fullname');

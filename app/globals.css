@@ -32,5 +32,12 @@
 }
 
 .effects {
-  transition: all 0.7s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
