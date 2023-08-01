@@ -11,23 +11,25 @@ export default function Search() {
   const search = e => {
     e.preventDefault();
 
-    newParam(query);
-    setQuery('');
+    router.push(`/searched/${query}`);
+
+    // newParam(query);
+    // setQuery('');
   };
 
-  const newParam = query => {
-    const url = new URLSearchParams(window.location.search);
+  // const newParam = query => {
+  //   const url = new URLSearchParams(window.location.search);
 
-    if (query) {
-      url.set('query', query);
-    } else {
-      url.delete('query');
-    }
+  //   if (query) {
+  //     url.set('query', query);
+  //   } else {
+  //     url.delete('query');
+  //   }
 
-    const pathName = `${window.location.pathname}?${url.toString()}`;
+  //   const pathName = `/searched/${url.toString()}`;
 
-    router.push(pathName);
-  };
+  //   router.push(pathName);
+  // };
 
   return (
     <form className="relative">

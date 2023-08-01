@@ -1,21 +1,33 @@
 'use client';
 
+import Link from 'next/link';
+import ReactPlay from './ReactPlay';
+import IconComponent from './IconCompoents';
+
 export default function MuscleItems({ item }) {
-  const { Category, Difficulty, videoURL, Grips, exercise_name } = item;
+  const { Category, Difficulty, videoURL, Grips, exercise_name, id } = item;
 
   return (
-    <div className="w-full p-2 text-sm shadow-xl rounded-xl">
-      <video src={videoURL} width={500} height={500} />
-      <div className="flex flex-col gap-y-3 mt-3">
+    <div className="w-full p-2 text-sm mb-5 bg-neutral-200 rounded-2xl">
+      <div className="relative">
+        <ReactPlay url={videoURL[0]} />
+        <h3 className="absolute top-2 right-2 text-3xl cursor-pointer hover:text-red-500">
+          <IconComponent item={item} />
+        </h3>
+      </div>
+      <Link
+        href={`/exercise/${id}`}
+        className="flex flex-col gap-y-3 z-50 hover-fav py-5"
+      >
         <div className="flex-between">
-          <p>{exercise_name}</p>
+          <p className="hover-underline">{exercise_name}</p>
           <p>{Grips}</p>
         </div>
         <div className="flex-between">
           <p>Difficulty: {Difficulty}</p>
           <p>Category: {Category}</p>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }

@@ -1,9 +1,10 @@
-import Navbar from "@/components/Navbar";
-import "./globals.css";
-import { ReduxProvider } from "./redux/provider";
+import Navbar from '@/components/Navbar';
+import './globals.css';
+import { ReduxProvider } from './redux/provider';
+import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: "Exercises App",
+  title: 'Exercises App',
 };
 
 export default function RootLayout({ children }) {
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
         <ReduxProvider>
           <Navbar />
           {children}
+          <Footer />
         </ReduxProvider>
       </body>
     </html>

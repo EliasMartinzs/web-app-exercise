@@ -26,6 +26,7 @@ export default function GetInfos() {
         setIsOpen(true);
       } else {
         setIsOpen(false);
+        router.push('/main-page');
       }
     };
     page();
@@ -42,7 +43,7 @@ export default function GetInfos() {
       setMuscle('');
       setIsOpen(!isOpen);
       localStorage.setItem('fullname', fullName);
-      router.push(`/exercises`);
+      router.push(`/main-page`);
     } else {
       return alert('Insert your name and your preferred muscle');
     }
@@ -54,9 +55,11 @@ export default function GetInfos() {
         <div className="w-96 h-96 bg-white rounded-2xl flex-center flex-col">
           <div className="flex-center flex-col">
             <h3 className="bg-white text-black text-center text-lg font-extralight">
-              Yout Name <br />
-              And <br />
-              Your favorite workout muscle <br />
+              Your Name <br />
+              And
+              <br />
+              Your favorite workout muscle
+              <br />
               For better experience in the app
             </h3>
           </div>
@@ -95,7 +98,7 @@ export default function GetInfos() {
             <button
               type="button"
               onClick={completeForm}
-              className="p-2 border border-slate-400 rounded-xl bg-[#121522] hover:bg-white hover:text-black transition-colors mt-5"
+              className="p-2 border border-slate-400 rounded-xl bg-white hover:bg-[#121522] hover:text-white transition-colors mt-5"
             >
               Already
             </button>

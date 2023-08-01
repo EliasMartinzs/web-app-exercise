@@ -1,10 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const addToFavorite = (state, productToAdd) => {
+  const existingCartItem = Array.isArray(state)
+    ? state.find(cartItem => cartItem.id === productToAdd.id)
+    : null;
+
+  if (existingCartItem) {
+    return state.map(cartItem =>
+      cartItem.id === productToAdd.id ? { ...cartItem } : cartItem
+    );
+  }
+
+  return [...state, { ...productToAdd }];
+};
+
+const removeToFavories = (state, removeToAdd) => {
+  const existingItem = state.find(item => item.id === removeToAdd.id);
+
+  if (existingItem) {
+    return state.filter(item => item.id !== removeToAdd.id);
+  }
+};
+
 const initialState = {
   fisrtName: '',
   preferMuscle: '',
-  muscleSelected: '',
-  categoriesSelected: '',
+  muscleFavorites: [],
 };
 
 export const userSlice = createSlice({
@@ -17,11 +38,17 @@ export const userSlice = createSlice({
     setPreferMuscle(state, action) {
       state.preferMuscle = action.payload;
     },
-    setMuscleSelected(state, action) {
-      state.muscleSelected = action.payload;
+    setFavorites(state, action) {
+      state.muscleFavorites = addToFavorite(
+        state.muscleFavorites,
+        action.payload
+      );
     },
-    setCategories(state, action) {
-      state.categoriesSelected = action.payload;
+    setRemoveFromFavorites(state, action) {
+      state.muscleFavorites = removeToFavories(
+        state.muscleFavorites,
+        action.payload
+      );
     },
   },
 });
@@ -29,7 +56,7 @@ export const userSlice = createSlice({
 export const {
   setCurrentUser,
   setPreferMuscle,
-  setMuscleSelected,
-  setCategories,
+  setFavorites,
+  setRemoveFromFavorites,
 } = userSlice.actions;
 export const userReducer = userSlice.reducer;
