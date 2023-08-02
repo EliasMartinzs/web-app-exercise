@@ -31,7 +31,7 @@ export const categories = [
 ];
 
 export const tools = [
-  { name: 'Body Mass Index (BMI)', link: '/BMI' },
-  { name: 'Basal Metabolic Rate (BMR)', link: '/BMR' },
-  { name: 'Body Fat Percentage (BFP)', link: '/BFP' },
+  { name: 'Índice de massa corporal (BMI)', link: '/BMI' },
+  { name: ' Taxa Metabólica Basal (BMR)', link: '/BMR' },
+  { name: 'Porcentagem de gordura corporal (BFP)', link: '/BFP' },
 ];

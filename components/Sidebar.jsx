@@ -16,25 +16,25 @@ export default function Sidebar({ isOpen, setIsOpen }) {
           <h4 className="font-black text-xl">Fitness Center</h4>
         </div>
         <div className="w-full px-2 lg:px-10 mt-5">
-          <div className="mb-10 gap-y-1">
+          <div className="mb-10 gap-y-1 flex-start flex-col">
             <h4 className="font-black mb-3">Pefil</h4>
             <h3 className="flex gap-x-2">
-              <span>Name:</span> <SelectedUser />
+              <span>Nome:</span> <SelectedUser />
             </h3>
             <h3 className="flex gap-x-2">
-              <span>Muscle: </span> <SelectedMuscleUser />
+              <span>Músculo: </span> <SelectedMuscleUser />
             </h3>
             <Link
               href="/favorites"
               className="hover:underline underline-offset-4"
               onClick={() => setIsOpen(!isOpen)}
             >
-              Favorites
+              Favoritos
             </Link>
             <ClearUser isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
           <div>
-            <h4 className="font-black">Tools</h4>
+            <h4 className="font-black">Ferramentas</h4>
             <span className="text-sm font-extralight flex flex-col gap-y-1 mt-3">
               {tools?.map(tool => (
                 <Link

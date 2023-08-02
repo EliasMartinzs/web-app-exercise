@@ -18,7 +18,7 @@ export default function Search() {
     <form className="relative">
       <input
         type="text"
-        placeholder="Search by name exercises"
+        placeholder="Pesquise por nome nome de exercicios (somente em ingles)"
         className="border-b py-2 w-full outline-none bg-transparent"
         name="query"
         value={query}

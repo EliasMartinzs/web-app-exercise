@@ -14,7 +14,7 @@ export default function ClearUser({ isOpen, setIsOpen }) {
       onClick={clearAllData}
       className="text-red-500 capitalize hover:underline underline-offset-4"
     >
-      delete yours informations
+      Limpar seus dados
     </button>
   );
 }

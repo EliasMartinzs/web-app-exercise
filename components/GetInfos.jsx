@@ -55,12 +55,12 @@ export default function GetInfos() {
         <div className="w-96 h-96 bg-white rounded-2xl flex-center flex-col">
           <div className="flex-center flex-col">
             <h3 className="bg-white text-black text-center text-lg font-extralight">
-              Your Name <br />
-              And
+              Seu Nome <br />
+              E
               <br />
-              Your favorite workout muscle
+              Seu Músculo Favorito
               <br />
-              For better experience in the app
+              Para Melhor Experiência em nosso APP
             </h3>
           </div>
           <form
@@ -70,7 +70,7 @@ export default function GetInfos() {
             <input
               type="text"
               className="bg-white text-black outline-none border p-2 border-slate-400 rounded-lg"
-              placeholder="Your Name"
+              placeholder="Seu Nome"
               name="fullName"
               value={fullName}
               onChange={e => setFullName(e.target.value)}
@@ -83,7 +83,7 @@ export default function GetInfos() {
               onChange={e => setMuscle(e.target.value)}
               required
             >
-              <option value="Select Muscle">Select Muscle</option>
+              <option value="Select Muscle">Selecione</option>
               {allMuscles &&
                 allMuscles.map(musc => (
                   <option
@@ -100,7 +100,7 @@ export default function GetInfos() {
               onClick={completeForm}
               className="p-2 border border-slate-400 rounded-xl bg-white hover:bg-[#121522] hover:text-white transition-colors mt-5"
             >
-              Already
+              Pronto
             </button>
           </form>
         </div>
