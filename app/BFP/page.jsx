@@ -1,5 +1,6 @@
 'use client';
 
+import ButtonForms from '@/components/ButtonForms';
 import { optionsCalculator } from '@/utils';
 import { useState } from 'react';
 
@@ -42,7 +43,7 @@ export default function BFP() {
     <div className="pt-40 w-full padding-web overflow-hidden">
       <h3 className="text-2xl font-black">Body Fat Calculator</h3>
       <div className="flex flex-col lg:grid grid-cols-2">
-        <form className="w-96 py-10 flex flex-col gap-y-3">
+        <form className="w-96 py-10 flex flex-col gap-y-3 text-black">
           <div className="relative">
             <input
               type="number"
@@ -101,24 +102,20 @@ export default function BFP() {
             </span>
           </div>
           <div className="flex-center gap-x-5">
-            <button
-              type="submit"
-              onClick={calcBMI}
-              className="w-32 h-10 flex-center border hover:bg-zinc-500 hover:text-white transition-colors rounded-xl"
-            >
-              Calc
-            </button>
-            <button
-              type="submit"
-              onClick={clearFields}
-              className="w-32 h-10 flex-center border bg-zinc-500 hover:bg-white hover:text-black text-white transition-colors rounded-xl"
-            >
-              Clear
-            </button>
+            <ButtonForms
+              calcBMI={calcBMI}
+              text="Calculate"
+              buttonType="calculate"
+            />
+            <ButtonForms
+              clearFields={clearFields}
+              text="Clear"
+              buttonType="clear"
+            />
           </div>
         </form>
         <div className="flex flex-col gap-y-2 p-2 mb-5 lg:mb-0">
-          <>{info?.bfp ? <h3 className="bg-zinc-300">Results</h3> : null}</>
+          <>{info?.bfp ? <h3>Results</h3> : null}</>
           <>{info?.bfp ? <p>Your bfp: {info?.bfp.toFixed(2)}</p> : null}</>
           <>
             {info?.fat_mass ? (

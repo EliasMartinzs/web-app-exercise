@@ -4,6 +4,7 @@ import { setRemoveFromFavorites } from '@/app/redux/features/user-slice';
 import ReactPlayer from 'react-player';
 import { useDispatch } from 'react-redux';
 import { CiCircleRemove } from 'react-icons/ci';
+import AddFavorites from './AddFavorites';
 
 export default function TargetItems({ muscle }) {
   const {
@@ -17,6 +18,7 @@ export default function TargetItems({ muscle }) {
     videoURL,
   } = muscle;
   const dispatch = useDispatch();
+  console.log(muscle);
 
   const removeFavorite = () => dispatch(setRemoveFromFavorites(muscle));
 
@@ -32,7 +34,7 @@ export default function TargetItems({ muscle }) {
         <h3 className="text-sm mb-3">
           <span className="font-semibold">Difficulty</span> : {Difficulty}
         </h3>
-        <div className="flex flex-col gap-y-2 lg:grid grid-cols-2 gap-2">
+        <div className="flex flex-col gap-y-2 lg:grid grid-cols-2 gap-2 relative">
           <ReactPlayer
             url={videoURL?.at(0)}
             width="100%"
@@ -49,6 +51,9 @@ export default function TargetItems({ muscle }) {
             loop={true}
             muted={true}
           />
+          <div className="absolute top-3 right-3">
+            <AddFavorites item={muscle} />
+          </div>
         </div>
       </div>
       <div className="mt-5">

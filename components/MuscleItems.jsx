@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import ReactPlay from './ReactPlay';
-import IconComponent from './IconCompoents';
+import AddFavorites from './AddFavorites';
 
 export default function MuscleItems({ item }) {
   const { Category, Difficulty, videoURL, Grips, exercise_name, id } = item;
@@ -12,7 +12,7 @@ export default function MuscleItems({ item }) {
       <div className="relative">
         <ReactPlay url={videoURL[0]} />
         <h3 className="absolute top-2 right-2 text-3xl cursor-pointer hover:text-red-500">
-          <IconComponent item={item} />
+          <AddFavorites item={item} />
         </h3>
       </div>
       <Link

@@ -34,8 +34,6 @@ export default function Execise({ params }) {
     videoURL,
   } = data;
 
-  console.log(videoURL);
-
   return (
     <div className="pt-40 padding-web">
       <h3 className="text-xl mb-3 font-bold border-b capitalize">

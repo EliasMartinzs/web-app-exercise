@@ -24,6 +24,13 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             <h3 className="flex gap-x-2">
               <span>Muscle: </span> <SelectedMuscleUser />
             </h3>
+            <Link
+              href="/favorites"
+              className="hover:underline underline-offset-4"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              Favorites
+            </Link>
             <ClearUser isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
           <div>

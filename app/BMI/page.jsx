@@ -1,5 +1,6 @@
 'use client';
 
+import ButtonForms from '@/components/ButtonForms';
 import { optionsCalculator } from '@/utils';
 import { useState } from 'react';
 
@@ -38,7 +39,7 @@ export default function BMI() {
     <div className="pt-40 padding-web w-full overflow-hidden">
       <h3 className="text-2xl font-black">BMI healthy weight calculator</h3>
       <div className="flex flex-col lg:grid grid-cols-2">
-        <form className="w-96 py-10 flex flex-col gap-y-3">
+        <form className="w-96 py-10 flex flex-col gap-y-3 text-black">
           <div className="relative">
             <input
               type="number"
@@ -62,24 +63,20 @@ export default function BMI() {
             <small className="text-slate-500 absolute top-3 right-2">Cm</small>
           </div>
           <div className="flex-center gap-x-5">
-            <button
-              type="submit"
-              onClick={calcBMI}
-              className="w-32 h-10 flex-center border hover:bg-zinc-500 hover:text-white transition-colors rounded-xl"
-            >
-              Calc
-            </button>
-            <button
-              type="submit"
-              onClick={clearFields}
-              className="w-32 h-10 flex-center border bg-zinc-500 hover:bg-white hover:text-black text-white transition-colors rounded-xl"
-            >
-              Clear
-            </button>
+            <ButtonForms
+              calcBMI={calcBMI}
+              text="Calculate"
+              buttonType="calculate"
+            />
+            <ButtonForms
+              clearFields={clearFields}
+              text="Clear"
+              buttonType="clear"
+            />
           </div>
         </form>
         <div className="flex flex-col gap-y-2 p-2 mb-5 lg:mb-0">
-          <>{info?.bmi ? <h3 className="bg-zinc-300">Results</h3> : null}</>
+          <>{info?.bmi ? <h3>Results</h3> : null}</>
           <>{info?.bmi ? <p>Your BMI: {info?.bmi}</p> : null}</>
           <>{info?.health ? <p>Your Health: {info?.health}</p> : null}</>
           <>
