@@ -33,7 +33,6 @@ export default function BMI() {
 
     setBmi(data);
   };
-  console.log(bmi);
 
   return (
     <div className="pt-40 padding-web w-full overflow-hidden">
@@ -79,7 +78,8 @@ export default function BMI() {
             </button>
           </div>
         </form>
-        <div className="flex flex-col gap-y-2">
+        <div className="flex flex-col gap-y-2 p-2 mb-5 lg:mb-0">
+          <>{info?.bmi ? <h3 className="bg-zinc-300">Results</h3> : null}</>
           <>{info?.bmi ? <p>Your BMI: {info?.bmi}</p> : null}</>
           <>{info?.health ? <p>Your Health: {info?.health}</p> : null}</>
           <>

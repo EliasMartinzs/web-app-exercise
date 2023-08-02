@@ -11,6 +11,12 @@
   font-family: 'Fira Mono', monospace;
 }
 
+body {
+  background: #101820ff;
+  /* background: #141414; */
+  color: #fee715ff;
+}
+
 .padding-web {
   @apply px-5 lg:px-40;
 }

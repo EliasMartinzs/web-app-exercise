@@ -12,31 +12,14 @@ export default function Search() {
     e.preventDefault();
 
     router.push(`/searched/${query}`);
-
-    // newParam(query);
-    // setQuery('');
   };
-
-  // const newParam = query => {
-  //   const url = new URLSearchParams(window.location.search);
-
-  //   if (query) {
-  //     url.set('query', query);
-  //   } else {
-  //     url.delete('query');
-  //   }
-
-  //   const pathName = `/searched/${url.toString()}`;
-
-  //   router.push(pathName);
-  // };
 
   return (
     <form className="relative">
       <input
         type="text"
         placeholder="Search workouts"
-        className="border-b py-2 w-full outline-none"
+        className="border-b py-2 w-full outline-none bg-transparent"
         name="query"
         value={query}
         onChange={e => setQuery(e.target.value.toLowerCase())}

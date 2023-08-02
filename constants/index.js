@@ -34,8 +34,4 @@ export const tools = [
   { name: 'Body Mass Index (BMI)', link: '/BMI' },
   { name: 'Basal Metabolic Rate (BMR)', link: '/BMR' },
   { name: 'Body Fat Percentage (BFP)', link: '/BFP' },
-  { name: 'Ideal Body Weight (IBW)', link: '/IBW' },
-  { name: 'Waist-Hip Ration (WHT)', link: '/WHT' },
-  { name: 'A Body Shape Index (ABSI)', link: '/ABSI' },
-  { name: 'Total Daily Energy Expenditure (TDEE)', link: '/TDEE' },
 ];

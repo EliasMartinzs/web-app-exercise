@@ -59,7 +59,8 @@ export default function Exercises() {
           <>
             {data.length > 9 && (
               <Pagination
-                color="standard"
+                variant="outlined"
+                color="primary"
                 shape7="rounded"
                 defaultPage={1}
                 count={Math.ceil(data.length / exercisesPerPage)}

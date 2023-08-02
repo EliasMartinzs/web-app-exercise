@@ -38,7 +38,7 @@ export default function Execise({ params }) {
 
   return (
     <div className="pt-40 padding-web">
-      <h3 className="text-xl mb-3 font-bold text-yellow-500 border-b capitalize">
+      <h3 className="text-xl mb-3 font-bold border-b capitalize">
         {exercise_name}
       </h3>
       <h3 className="text-sm mb-3">
@@ -63,9 +63,7 @@ export default function Execise({ params }) {
         />
       </div>
       <div className="mt-5">
-        <h3 className="text-xl mb-3 font-bold text-yellow-500 border-b capitalize">
-          Steps
-        </h3>
+        <h3 className="text-xl mb-3 font-bold border-b capitalize">Steps</h3>
         <p className="font-extralight text-sm lg:text-base">{steps}</p>
         <div className="mt-3">
           {Force ? (
