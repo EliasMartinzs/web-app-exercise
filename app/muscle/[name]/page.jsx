@@ -26,12 +26,16 @@ export default function Muscle({ params }) {
     fetchData();
   }, []);
 
+  const filtered = Array.isArray(data)
+    ? data.filter(item => item.target.Primary?.at(0) === newName)
+    : null;
+
   const exercisesPerPage = 9;
 
   const indexLastExercise = currentPage * exercisesPerPage;
   const indexFirstExercise = indexLastExercise - exercisesPerPage;
-  const currentData = Array.isArray(data)
-    ? data.slice(indexFirstExercise, indexLastExercise)
+  const currentData = Array.isArray(filtered)
+    ? filtered.slice(indexFirstExercise, indexLastExercise)
     : null;
 
   const paginate = (_, value) => {

@@ -2,7 +2,7 @@
 
 import ButtonForms from '@/components/ButtonForms';
 import { optionsCalculator } from '@/utils';
-import { use, useState } from 'react';
+import { useState } from 'react';
 
 export default function BMR() {
   const [weight, setWeight] = useState('');

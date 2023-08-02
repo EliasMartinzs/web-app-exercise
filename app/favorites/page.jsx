@@ -1,6 +1,6 @@
 'use client';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectFavorites } from '../redux/features/user-selector';
 import TargetItems from '@/components/TargetItems';
 

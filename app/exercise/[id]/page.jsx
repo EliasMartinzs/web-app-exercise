@@ -1,7 +1,7 @@
 'use client';
 
 import { options } from '@/utils';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 
 export default function Execise({ params }) {

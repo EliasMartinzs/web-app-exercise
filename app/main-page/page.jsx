@@ -2,8 +2,7 @@
 
 import { selectMuscle } from '@/app/redux/features/user-selector';
 import { options } from '@/utils';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import AllMuscle from '@/components/AllMuscle';
 import MuscleItems from '@/components/MuscleItems';
@@ -13,14 +12,17 @@ export default function Exercises() {
   const [data, setData] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const muscleUser = useSelector(selectMuscle);
-  console.log(muscleUser);
+
+  const filtered = Array.isArray(data)
+    ? data.filter(item => item.target.Primary?.at(0) === muscleUser)
+    : null;
 
   const exercisesPerPage = 9;
 
   const indexLastExercise = currentPage * exercisesPerPage;
   const indexFirstExercise = indexLastExercise - exercisesPerPage;
-  const currentData = Array.isArray(data)
-    ? data.slice(indexFirstExercise, indexLastExercise)
+  const currentData = Array.isArray(filtered)
+    ? filtered.slice(indexFirstExercise, indexLastExercise)
     : null;
 
   const paginate = (_, value) => {
@@ -43,10 +45,11 @@ export default function Exercises() {
 
     fetchData();
   }, []);
+
   return (
     <div className="w-full padding-web mt-36">
       <AllMuscle />
-      {Array.isArray(data) ? (
+      {Array.isArray(currentData) ? (
         <div className="flex flex-col lg:grid grid-cols-3 gap-2">
           {currentData.map((item, idx) => (
             <MuscleItems key={idx} item={item} />

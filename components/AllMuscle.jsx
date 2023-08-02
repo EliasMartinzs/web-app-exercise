@@ -2,7 +2,6 @@ import { allMuscles, categories } from '@/constants';
 import Search from './Search';
 import MuscleSelect from './MuscleSelect';
 import CategoriesSelect from './CategoriesSelect';
-import MyFavorites from './MyFavorites';
 
 export default function AllMuscle() {
   return (
@@ -10,7 +9,6 @@ export default function AllMuscle() {
       <div className="flex-start gap-x-2">
         <MuscleSelect target={allMuscles} title="Muscle" />
         <CategoriesSelect target={categories} title="Muscle" />
-        {/* <MyFavorites /> */}
       </div>
       <div className="w-full pt-5 relative">
         <Search />
