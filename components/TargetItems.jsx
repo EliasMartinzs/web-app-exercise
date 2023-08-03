@@ -5,6 +5,7 @@ import ReactPlayer from 'react-player';
 import { useDispatch } from 'react-redux';
 import { CiCircleRemove } from 'react-icons/ci';
 import AddFavorites from './AddFavorites';
+import Link from 'next/link';
 
 export default function TargetItems({ muscle }) {
   const {
@@ -16,6 +17,7 @@ export default function TargetItems({ muscle }) {
     steps,
     target,
     videoURL,
+    id,
   } = muscle;
   const dispatch = useDispatch();
 
@@ -25,7 +27,12 @@ export default function TargetItems({ muscle }) {
     <div className="lg:grid grid-cols-1 mb-10 border-b border-spacing-y-80">
       <div className="">
         <div className="flex-between">
-          <h3 className="text-xl mb-3 font-bold capitalize">{exercise_name}</h3>
+          <Link
+            href={`/exercise/${id}`}
+            className="text-xl mb-3 font-bold capitalize"
+          >
+            {exercise_name}
+          </Link>
           <button onClick={removeFavorite} className="text-4xl">
             <CiCircleRemove />
           </button>

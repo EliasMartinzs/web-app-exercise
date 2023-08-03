@@ -5,9 +5,12 @@ import ReactPlay from '@/components/ReactPlay';
 import { options } from '@/utils';
 import { useEffect, useState } from 'react';
 import { Pagination } from '@mui/material';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Searched({ params }) {
   const { query } = params;
+  const router = useRouter();
 
   const [data, setData] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -47,9 +50,12 @@ export default function Searched({ params }) {
         <>
           {currentData.map((search, idx) => (
             <div className="pt-40 padding-web">
-              <h3 className="text-xl mb-3 font-bold text-yellow-500 border-b capitalize">
+              <Link
+                href={`/exercise/${search.id}`}
+                className="text-xl mb-3 font-bold text-yellow-500 capitalize"
+              >
                 {search.exercise_name}
-              </h3>
+              </Link>
               <h3 className="text-sm mb-3">
                 <span className="font-semibold">Difficulty</span> :{' '}
                 {search.Difficulty}
