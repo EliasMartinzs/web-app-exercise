@@ -58,15 +58,15 @@ export default function Exercises() {
       ) : null}
 
       <div className="flex-center mt-5">
-        {Array.isArray(data) ? (
+        {Array.isArray(filtered) ? (
           <>
-            {data.length > 9 && (
+            {filtered.length > 9 && (
               <Pagination
                 variant="outlined"
                 color="primary"
                 shape7="rounded"
                 defaultPage={1}
-                count={Math.ceil(data.length / exercisesPerPage)}
+                count={Math.ceil(filtered.length / exercisesPerPage)}
                 page={currentPage}
                 onChange={paginate}
                 size="large"

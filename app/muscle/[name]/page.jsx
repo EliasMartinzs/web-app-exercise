@@ -47,7 +47,7 @@ export default function Muscle({ params }) {
   return (
     <div className="w-full pt-40 padding-web">
       <div className="flex-center">
-        <h3 className="text-xl font-black">All Exercises {newName}</h3>
+        <h3 className="text-xl font-black">Todos Exercícios</h3>
       </div>
       <div className="mt-5">
         {Array.isArray(currentData) ? (
@@ -59,14 +59,14 @@ export default function Muscle({ params }) {
         ) : null}
       </div>
       <div className="flex-center mt-5">
-        {Array.isArray(data) ? (
+        {Array.isArray(filtered) ? (
           <>
-            {data.length > 9 && (
+            {filtered.length > 9 && (
               <Pagination
                 color="standard"
                 shape7="rounded"
                 defaultPage={1}
-                count={Math.ceil(data.length / exercisesPerPage)}
+                count={Math.ceil(filtered.length / exercisesPerPage)}
                 page={currentPage}
                 onChange={paginate}
                 size="large"

@@ -18,7 +18,6 @@ export default function TargetItems({ muscle }) {
     videoURL,
   } = muscle;
   const dispatch = useDispatch();
-  console.log(muscle);
 
   const removeFavorite = () => dispatch(setRemoveFromFavorites(muscle));
 

@@ -40,7 +40,6 @@ export default function Searched({ params }) {
 
     fetchData();
   }, []);
-  console.log(currentData);
 
   return (
     <div>

@@ -43,7 +43,7 @@ export default function CategoriesSelect({ target }) {
                           selected ? 'font-medium' : 'font-normal'
                         }`}
                       >
-                        <Link href={`/target/${person.name}`}>
+                        <Link href={`/target/${person.value}`}>
                           {person.name}
                         </Link>
                       </span>

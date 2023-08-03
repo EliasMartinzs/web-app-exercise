@@ -47,3 +47,10 @@ th {
   text-align: left;
   padding: 8px;
 }
+
+.absolut {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}

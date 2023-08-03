@@ -47,7 +47,7 @@ export default function MuscleSelect({ target }) {
                         }`}
                       >
                         <Link
-                          href={`/muscle/${person.name.split(' ').join('-')}`}
+                          href={`/muscle/${person.value.split(' ').join('-')}`}
                         >
                           {person.name}
                         </Link>

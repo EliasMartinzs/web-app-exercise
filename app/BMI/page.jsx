@@ -37,13 +37,13 @@ export default function BMI() {
 
   return (
     <div className="pt-40 padding-web w-full overflow-hidden">
-      <h3 className="text-2xl font-black">BMI healthy weight calculator</h3>
+      <h3 className="text-2xl font-black">Calculadora de peso saudável IMC</h3>
       <div className="flex flex-col lg:grid grid-cols-2">
         <form className="w-96 py-10 flex flex-col gap-y-3 text-black">
           <div className="relative">
             <input
               type="number"
-              placeholder="Weight"
+              placeholder="Peso"
               className="w-80 lg:w-full py-3 px-2 bg-slate-100 rounded-xl outline-none"
               name="weight"
               value={weight}
@@ -54,7 +54,7 @@ export default function BMI() {
           <div className="relative">
             <input
               type="text"
-              placeholder="Height"
+              placeholder="Altura"
               className="w-80 lg:w-full py-3 px-2 bg-slate-100 rounded-xl outline-none"
               name="height"
               value={height}
@@ -65,23 +65,23 @@ export default function BMI() {
           <div className="flex-center gap-x-5">
             <ButtonForms
               calcBMI={calcBMI}
-              text="Calculate"
+              text="Calcular"
               buttonType="calculate"
             />
             <ButtonForms
               clearFields={clearFields}
-              text="Clear"
+              text="Limpar"
               buttonType="clear"
             />
           </div>
         </form>
         <div className="flex flex-col gap-y-2 p-2 mb-5 lg:mb-0">
-          <>{info?.bmi ? <h3>Results</h3> : null}</>
-          <>{info?.bmi ? <p>Your BMI: {info?.bmi}</p> : null}</>
-          <>{info?.health ? <p>Your Health: {info?.health}</p> : null}</>
+          <>{info?.bmi ? <h3>Resultados</h3> : null}</>
+          <>{info?.bmi ? <p>Seu IMC: {info?.bmi}</p> : null}</>
+          <>{info?.health ? <p>Sua Saúde: {info?.health}</p> : null}</>
           <>
             {info?.healthy_bmi_range ? (
-              <p>Healthy BMI Range: {info?.healthy_bmi_range}</p>
+              <p>Faixa de IMC saudável: {info?.healthy_bmi_range}</p>
             ) : null}
           </>
         </div>
@@ -89,38 +89,38 @@ export default function BMI() {
       <div className="flex-start flex-col gap-y-3">
         <h3 className="text-xl font-medium">BMI Introduction</h3>
         <p>
-          BMI is a measurement of a person's leanness or corpulence based on
-          their height and weight, and is intended to quantify tissue mass. It
-          is widely used as a general indicator of whether a person has a
-          healthy body weight for their height. Specifically, the value obtained
-          from the calculation of BMI is used to categorize whether a person is
-          underweight, normal weight, overweight, or obese depending on what
-          range the value falls between. These ranges of BMI vary based on
-          factors such as region and age, and are sometimes further divided into
-          subcategories such as severely underweight or very severely obese.
-          Being overweight or underweight can have significant health effects,
-          so while BMI is an imperfect measure of healthy body weight, it is a
-          useful indicator of whether any additional testing or action is
-          required. Refer to the table below to see the different categories
-          based on BMI that are used by the calculator.
+          O IMC é uma medida da magreza ou corpulência de uma pessoa baseada em
+          sua altura e peso, e destina-se a quantificar a massa do tecido. Isto
+          é amplamente utilizado como um indicador geral de se uma pessoa tem um
+          peso corporal saudável para sua altura. Especificamente, o valor
+          obtido do cálculo do IMC é usado para categorizar se uma pessoa é
+          baixo peso, peso normal, sobrepeso ou obesidade, dependendo do que
+          intervalo em que o valor cai. Essas faixas de IMC variam de acordo com
+          fatores como região e idade, e às vezes são divididos em subcategorias
+          como severamente abaixo do peso ou muito severamente obesas. Estar
+          acima ou abaixo do peso pode ter efeitos significativos na saúde,
+          portanto, embora o IMC seja uma medida imperfeita do peso corporal
+          saudável, é uma indicador útil de se qualquer teste ou ação adicional
+          é obrigatório. Consulte a tabela abaixo para ver as diferentes
+          categorias com base no IMC que são usados pela calculadora.
         </p>
       </div>
       <div>
         <table className="mt-10 w-72 lg:w-96">
           <tbody>
             <tr>
-              <th>Classification</th>
+              <th>Classificação</th>
             </tr>
             <tr>
-              <td>Severe Thinness</td>
+              <td>Magreza Severa</td>
               <td>{`<`} 16 </td>
             </tr>
             <tr>
-              <td>Moderate Thinness</td>
+              <td>Magreza Moderada</td>
               <td> 16 - 17 </td>
             </tr>
             <tr>
-              <td>Mild Thinness</td>
+              <td>Magreza Leve</td>
               <td> 17 - 18.5 </td>
             </tr>
             <tr>
@@ -128,19 +128,19 @@ export default function BMI() {
               <td>18.5 - 25 </td>
             </tr>
             <tr>
-              <td>Overweight</td>
+              <td>Sobrepeso</td>
               <td>25 - 30</td>
             </tr>
             <tr>
-              <td>Obese Class I</td>
+              <td>Obeso Class I</td>
               <td>30 - 35</td>
             </tr>
             <tr>
-              <td>Obese Class II</td>
+              <td>Obeso Class II</td>
               <td>35 - 40</td>
             </tr>
             <tr>
-              <td>Obese Class II</td>
+              <td>Obeso Class II</td>
               <td>{`>`} 40</td>
             </tr>
           </tbody>

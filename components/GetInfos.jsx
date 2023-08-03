@@ -45,7 +45,7 @@ export default function GetInfos() {
       localStorage.setItem('fullname', fullName);
       router.push(`/main-page`);
     } else {
-      return alert('Insert your name and your preferred muscle');
+      return alert('Insira os dados pedidos');
     }
   };
 
@@ -88,8 +88,8 @@ export default function GetInfos() {
                 allMuscles.map(musc => (
                   <option
                     className="bg-white text-black"
-                    key={musc.name}
-                    value={musc.name}
+                    key={musc.value}
+                    value={musc.value}
                   >
                     {musc.name}
                   </option>
@@ -98,7 +98,7 @@ export default function GetInfos() {
             <button
               type="button"
               onClick={completeForm}
-              className="p-2 border border-slate-400 rounded-xl bg-white hover:bg-[#121522] hover:text-white transition-colors mt-5"
+              className="p-2 border border-slate-400 rounded-xl bg-white hover:bg-[#121522] hover:text-white transition-colors mt-5 text-black"
             >
               Pronto
             </button>
