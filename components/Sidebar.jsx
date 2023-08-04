@@ -31,6 +31,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             >
               Favoritos
             </Link>
+            <Link href="/progresso">Meu Progresso</Link>
             <ClearUser isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
           <div>

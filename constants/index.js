@@ -35,3 +35,46 @@ export const tools = [
   { name: ' Taxa Metabólica Basal (BMR)', link: '/BMR' },
   { name: 'Porcentagem de gordura corporal (BFP)', link: '/BFP' },
 ];
+
+export const userTypes = [
+  {
+    muscle: 'biceps',
+    type: 'number',
+  },
+  {
+    muscle: 'forearms',
+    type: 'number',
+  },
+  {
+    muscle: 'chest',
+    type: 'number',
+  },
+  {
+    muscle: 'waist',
+    type: 'number',
+  },
+  {
+    muscle: 'butt',
+    type: 'number',
+  },
+  {
+    muscle: 'quadsRight',
+    type: 'number',
+  },
+  {
+    muscle: 'quadsLeft',
+    type: 'number',
+  },
+  {
+    muscle: 'calfRight',
+    type: 'number',
+  },
+  {
+    muscle: 'calfLeft',
+    type: 'number',
+  },
+  {
+    muscle: 'shoulder',
+    type: 'number',
+  },
+];

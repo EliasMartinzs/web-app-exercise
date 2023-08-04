@@ -26,6 +26,7 @@ const initialState = {
   fisrtName: '',
   preferMuscle: '',
   muscleFavorites: [],
+  savedProgress: [],
 };
 
 export const userSlice = createSlice({
@@ -50,6 +51,9 @@ export const userSlice = createSlice({
         action.payload
       );
     },
+    setSavedProgress(state, action) {
+      state.savedProgress = action.payload;
+    },
   },
 });
 
@@ -58,5 +62,6 @@ export const {
   setPreferMuscle,
   setFavorites,
   setRemoveFromFavorites,
+  setSavedProgress,
 } = userSlice.actions;
 export const userReducer = userSlice.reducer;
