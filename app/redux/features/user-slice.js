@@ -1,3 +1,4 @@
+'use client';
 import { createSlice } from '@reduxjs/toolkit';
 
 const addToFavorite = (state, productToAdd) => {
@@ -22,11 +23,23 @@ const removeToFavories = (state, removeToAdd) => {
   }
 };
 
+const addProgress = (state, progress) => {
+  const existingProgress = Array.isArray(state)
+    ? state.find(item => item.id === progress.id)
+    : null;
+
+  if (existingProgress) {
+    return state.map(item => (item.id === progress.id ? { ...item } : item));
+  }
+
+  return [...state, { ...progress }];
+};
+
 const initialState = {
   fisrtName: '',
   preferMuscle: '',
   muscleFavorites: [],
-  savedProgress: [],
+  save: [],
 };
 
 export const userSlice = createSlice({
@@ -46,13 +59,10 @@ export const userSlice = createSlice({
       );
     },
     setRemoveFromFavorites(state, action) {
-      state.muscleFavorites = removeToFavories(
-        state.muscleFavorites,
-        action.payload
-      );
+      state.save = removeToFavories(state.save, action.payload);
     },
     setSavedProgress(state, action) {
-      state.savedProgress = action.payload;
+      state.save = addProgress(state.save, action.payload);
     },
   },
 });

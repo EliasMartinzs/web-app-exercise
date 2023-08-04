@@ -5,20 +5,40 @@ import { useState } from 'react';
 import { userTypes } from '@/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSavedProgress } from '../redux/features/user-slice';
-import { selectProgress } from '../redux/features/user-selector';
+import CompareProgress from '@/components/CompareProgress';
 
 export default function Progresso() {
   const [dataUser, setDataUser] = useState([]);
   const dispatch = useDispatch();
-  const { values } = dataUser;
 
   class User {
     constructor(values) {
       this.values = values;
     }
   }
-  console.log(dataUser);
-  const saveProgress = () => dispatch(setSavedProgress(values));
+
+  const saveProgress = () => dispatch(setSavedProgress(dataUser.values));
+
+  function getHours() {
+    const d = new Date();
+    const hours = d.getHours();
+    const minutes = d.getMinutes();
+
+    if (minutes < 9) {
+      return `${hours}:0${minutes}`;
+    }
+
+    return `${hours}:${minutes}`;
+  }
+
+  function getDate() {
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = d.getMonth();
+    const day = d.getDay();
+
+    return `${day}-${month}-${year}`;
+  }
 
   function generateId() {
     const timestamp = new Date().getTime();
@@ -30,6 +50,8 @@ export default function Progresso() {
   const formik = useFormik({
     initialValues: {
       id: generateId(),
+      date: getDate(),
+      time: getHours(),
       biceps: '',
       forearms: '',
       chest: '',
@@ -42,8 +64,7 @@ export default function Progresso() {
       shoulder: '',
     },
     onSubmit: values => {
-      const newUser = new User(values);
-      setDataUser(newUser);
+      setDataUser(new User(values));
     },
   });
 
@@ -75,6 +96,7 @@ export default function Progresso() {
           </button>
         </form>
       </div>
+      <CompareProgress />
     </div>
   );
 }
