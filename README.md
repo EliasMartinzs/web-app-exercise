@@ -7,9 +7,6 @@ Possui ferramentas para medir índice de massa corporal, taxa metabólica basal,
 
 Projeto feito com nextjs tailwindcss e outras referência abaixo
 
-Responsividade somente em laptops desktop e smartphone.
-
-
 ## Referência
 
  - [Muscle Wiki](https://rapidapi.com/rahulbanerjee26/api/musclewiki/)
