@@ -31,7 +31,13 @@ export default function Sidebar({ isOpen, setIsOpen }) {
             >
               Favoritos
             </Link>
-            <Link href="/progresso">Meu Progresso</Link>
+            <Link
+              href="/progresso"
+              className="hover:underline underline-offset-4"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              Meu Progresso
+            </Link>
             <ClearUser isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
           <div>
