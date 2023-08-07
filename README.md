@@ -30,3 +30,6 @@ Logo a seguir executar o codigo abaixo.
 ```bash
   npm run dev
 ```
+
+![1](https://github.com/EliasMartinzs/web-app-exercise/assets/97196276/79b4e0bf-c4b0-4d60-aa15-70f722423fcc)
+![2](https://github.com/EliasMartinzs/web-app-exercise/assets/97196276/216c852f-eff0-4aaa-b876-4e82ce8214d7)
