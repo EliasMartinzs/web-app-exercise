@@ -1,15 +1,22 @@
-import React from 'react';
-
-export default function InputProgress({ label, name, type, onChange, value }) {
+import { TextField } from '@mui/material';
+export default function InputProgress({
+  name,
+  type,
+  onChange,
+  value,
+  placeHolder,
+}) {
   return (
     <>
-      <label className="text-white">{label}</label>
-      <input
+      <TextField
+        variant="filled"
         name={name}
         type={type}
+        label={placeHolder}
         onChange={onChange}
         value={value}
-        className="w-96"
+        className="w-full lg:w-96 bg-slate-100 rounded-xl"
+        required
       />
     </>
   );

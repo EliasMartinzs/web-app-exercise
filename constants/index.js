@@ -38,42 +38,52 @@ export const tools = [
 
 export const userTypes = [
   {
+    name: 'Biceps',
     muscle: 'biceps',
     type: 'number',
   },
   {
+    name: 'Antebraço',
     muscle: 'forearms',
     type: 'number',
   },
   {
+    name: 'Peito',
     muscle: 'chest',
     type: 'number',
   },
   {
+    name: 'Cintura',
     muscle: 'waist',
     type: 'number',
   },
   {
+    name: 'Quadril',
     muscle: 'butt',
     type: 'number',
   },
   {
+    name: 'Coxa Direita',
     muscle: 'quadsRight',
     type: 'number',
   },
   {
+    name: 'Coxa Esquerda',
     muscle: 'quadsLeft',
     type: 'number',
   },
   {
+    name: 'Panturrilha Direita',
     muscle: 'calfRight',
     type: 'number',
   },
   {
+    name: 'Panturrilha Esquerda',
     muscle: 'calfLeft',
     type: 'number',
   },
   {
+    name: 'Ombro',
     muscle: 'shoulder',
     type: 'number',
   },

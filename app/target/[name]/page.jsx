@@ -40,8 +40,6 @@ export default function Target({ params }) {
     fetchData();
   }, []);
 
-  console.log(currentData);
-
   return (
     <div className="w-full pt-40 padding-web">
       <div className="flex-center">
